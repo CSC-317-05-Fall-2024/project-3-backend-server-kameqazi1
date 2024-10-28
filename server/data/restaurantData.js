@@ -1,14 +1,13 @@
-// Fill this in
 let restaurantData = [
     {
-        id: 0,
+        id: "0",
         name:"Brasserie",
         address:"Bahnhofplatz 15, Zurich, 8000, Switzerland",
         image:"images/brasserue-sud.webp",
         phone:"(415) 555-5555",
     },
     {
-        id: 1,
+        id: "1",
         name:"Arakel",
         address:"Rue Henri Blanvalet 17, Geneva, 1207, Switzerland",
         image:"images/arakel1.webp",
@@ -16,7 +15,7 @@ let restaurantData = [
 
     },
     {
-        id: 2,
+        id:"2",
         name:"FP Journe",
         address:"Rue du Rhône 49, Geneva, 1200, Switzerland",
         image:"images/fp-journe.webp",
@@ -24,7 +23,7 @@ let restaurantData = [
 
     },
     {
-        id: 3,
+        id: "3",
         name:"Miradi",
         address:"Rheinhaldenstrasse 8, Schaffhausen, 8200, Switzerland",
         image:"images/miradi.webp",
@@ -32,7 +31,7 @@ let restaurantData = [
 
     },
     {
-        id: 4,
+        id:"4",
         name:"Rosmarin",
         address:"Untergstaadstrasse 26, Gstaad, 3780, Switzerland",
         image:"images/rosmarin.webp",
@@ -40,49 +39,13 @@ let restaurantData = [
 
     },
     {
-        id: 5,
+        id:"5",
         name:"Villa Sommerlust",
         address:"Eisengasse 32, Lenzburg, 5600, Switzerland",
         image:"images/villa-sommerlust.jpeg",
         phone:"(415) 555-5555",
 
     },
-
 ];
 
-let currentId = restaurantData.length - 1;
-const nextId = () => {
-    currentId += 1;
-    return currentId;
-}
-
-const getRestaurants = () => {
-    return restaurantData;
-};
-
-// Get a restaurant by id
-const getRestaurant = (id) => {
-    return restaurantData.find(restaurant => restaurant.id === id);
-};
-
-// Create a new restaurant entry
-const createRestaurant = (data) => {
-    const newRestaurant = {
-        id: nextId(),
-        ...data
-    }
-    restaurantData.push(newRestaurant);
-    return newRestaurant;
-};
-
-// Delete a restaurant by id
-const deleteRestaurant = (id) => {
-    const restaurantToDelete = restaurantData.find(restaurant => restaurant.id === id);
-    if (!restaurantToDelete) {
-        throw Error(`restaurant ${id} not found!`);
-    }
-    restaurantData = restaurantData.filter(restaurant => restaurant.id !== id);
-    return restaurantToDelete;
-};
-
-export { getRestaurants, getRestaurant, createRestaurant, deleteRestaurant };
+export default  restaurantData ;
